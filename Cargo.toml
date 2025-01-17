@@ -1,0 +1,31 @@
+[package]
+name = "iron"
+version = "0.1.0"
+authors = ["Yigal Chripun <yigal.chripun@gmail.com>"]
+description = "Iron programming language"
+categories = ["programming-languages"]
+keywords = ["programming", "language"]
+license = "GPL-3.0"
+homepage = "iron.dev"                                 # TODO: arrange for an actual website
+repository = "https://github.com/yourgithubusername/hello-wasm" # TODO: arrange for an actual repository
+edition = "2021"
+readme = "README.md"
+default-run = "fe"
+
+[lib]
+name = "iron"
+crate-type = ["cdylib", "rlib"]
+
+
+[[bin]]
+name = "fe"
+edition = "2021"
+
+[[bin]]
+name = "fe-male"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.5.26", features = ["derive", "unicode", "wrap_help"] }
+clap_complete = "4.5.42"
+wasm-bindgen = "0.2"

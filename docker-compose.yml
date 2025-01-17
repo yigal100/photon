@@ -1,0 +1,11 @@
+services:
+  app:
+    # image: secondstate/rust-example-hello
+    #image: iron:latest #ghcr.io/bytecodealliance/wasm-pkg/wasi/http:0.2.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    platform: wasi/wasm
+    runtime: io.containerd.wasmtime.v1
+    command: ["fe.wasm"]
+    container_name: fe

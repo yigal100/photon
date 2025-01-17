@@ -1,0 +1,6 @@
+[build]
+target = "wasm32-wasip1"
+profile = "release"
+
+[target.wasm32-wasip1]
+runner = "wasmtime -S cli,inherit-env"
