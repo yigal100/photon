@@ -1,16 +1,16 @@
 mod commands {
     pub mod build;
     pub mod completion;
-    pub mod greet;
+    pub mod manifesto;
 }
 
-use clap::builder::styling::AnsiColor;
 use clap::builder::Styles;
+use clap::builder::styling::AnsiColor;
 use clap::{CommandFactory, Parser, Subcommand};
 
 use commands::build::BuildCommand;
 use commands::completion::CompletionCommand;
-use commands::greet::GreetingCommand;
+use commands::manifesto::ManifestoCommand;
 
 const FE_STYLE: clap::builder::styling::Styles = Styles::styled()
     .header(AnsiColor::Yellow.on_default().bold())
@@ -33,7 +33,7 @@ struct Cli {
 #[derive(Subcommand)]
 enum Commands {
     Build(BuildCommand),
-    Greet(GreetingCommand),
+    Manifesto(ManifestoCommand),
     Completion(CompletionCommand),
 }
 
@@ -41,13 +41,15 @@ fn main() {
     let cli = Cli::parse();
 
     match &cli.command {
-        Commands::Greet(cmd) => {
-            cmd.greet();
+        Commands::Manifesto(cmd) => {
+            cmd.preach();
         }
         Commands::Completion(cmd) => {
             let mut command = Cli::command();
             cmd.complete(&mut command);
         }
-        Commands::Build(_cmd) => todo!(),
+        Commands::Build(cmd) => {
+            cmd.build();
+        }
     }
 }

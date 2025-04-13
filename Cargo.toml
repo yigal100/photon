@@ -1,31 +1,31 @@
-[package]
-name = "iron"
+[workspace]
+
+[workspace.package]
+edition = "2024"
 version = "0.1.0"
-authors = ["Yigal Chripun <yigal.chripun@gmail.com>"]
-description = "Iron programming language"
-categories = ["programming-languages"]
-keywords = ["programming", "language"]
+authors = ["Yigal Chripun"]
 license = "GPL-3.0"
 homepage = "iron.dev"                                 # TODO: arrange for an actual website
 repository = "https://github.com/yourgithubusername/hello-wasm" # TODO: arrange for an actual repository
-edition = "2021"
+documentation = "https://docs.rs/iron" # TODO: arrange for an actual documentation
 readme = "README.md"
-default-run = "fe"
 
-[lib]
+[package]
 name = "iron"
-crate-type = ["cdylib", "rlib"]
-
-
-[[bin]]
-name = "fe"
-edition = "2021"
-
-[[bin]]
-name = "fe-male"
-edition = "2021"
+description = "Iron programming language"
+categories = ["programming-languages"]
+keywords = ["programming", "language"]
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+homepage.workspace = true
+repository.workspace = true
+documentation.workspace = true
+readme.workspace = true
 
 [dependencies]
-clap = { version = "4.5.26", features = ["derive", "unicode", "wrap_help"] }
-clap_complete = "4.5.42"
+clap = { version = "4.5", features = ["derive", "unicode", "wrap_help"] }
+clap_complete = "4.5"
 wasm-bindgen = "0.2"
+compiler ={ path = "compiler" }
