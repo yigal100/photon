@@ -1,4 +1,5 @@
 use clap::Args;
+use owo_colors::OwoColorize;
 
 #[derive(Args)]
 #[command(hide = true)]
@@ -19,7 +20,7 @@ impl ManifestoCommand {
     pub(crate) fn preach(&self) {
         // for _ in 0..self.count {
         const VAGINA: &str = include_str!("../../VAGINA.md");
-        println!("{}", VAGINA)
+        anstream::println!("{}", VAGINA.red());
         // }
     }
 }

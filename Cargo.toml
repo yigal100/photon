@@ -29,3 +29,6 @@ clap = { version = "4.5", features = ["derive", "unicode", "wrap_help"] }
 clap_complete = "4.5"
 wasm-bindgen = "0.2"
 compiler ={ path = "compiler" }
+colorchoice-clap = "1.0.6"
+owo-colors = "4.0"
+anstream = "0.6"
