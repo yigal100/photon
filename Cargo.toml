@@ -5,14 +5,14 @@ edition = "2024"
 version = "0.1.0"
 authors = ["Yigal Chripun"]
 license = "GPL-3.0"
-homepage = "iron.dev"                                 # TODO: arrange for an actual website
-repository = "https://github.com/yourgithubusername/hello-wasm" # TODO: arrange for an actual repository
-documentation = "https://docs.rs/iron" # TODO: arrange for an actual documentation
+homepage = "photon.dev"                                 # TODO: arrange for an actual website
+repository = "https://github.com/yigal100/beam"
+documentation = "https://yigal100.github.io/photon_docs/"
 readme = "README.md"
 
 [package]
-name = "iron"
-description = "Iron programming language"
+name = "beam"
+description = "Beam is the all-in-one tool for the Photon programming language"
 categories = ["programming-languages"]
 keywords = ["programming", "language"]
 version.workspace = true
@@ -25,10 +25,12 @@ documentation.workspace = true
 readme.workspace = true
 
 [dependencies]
+compiler = {path = "compiler"}
+# compiler-hime ={ path = "compiler-hime" }
+# phaser = {path = "phaser"}
 clap = { version = "4.5", features = ["derive", "unicode", "wrap_help"] }
 clap_complete = "4.5"
 wasm-bindgen = "0.2"
-compiler ={ path = "compiler" }
 colorchoice-clap = "1.0.6"
 owo-colors = "4.0"
 anstream = "0.6"

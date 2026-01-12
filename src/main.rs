@@ -28,6 +28,8 @@ const FE_STYLE: clap::builder::styling::Styles = Styles::styled()
 #[command(version, about, long_about = None)]
 #[command(styles = FE_STYLE)]
 #[command(allow_external_subcommands = true)]
+// #[command(next_help_heading = "EXAMPLES")]
+
 // #[command(flatten_help = true)]
 //#[command(infer_subcommands = true)]
 // #[command(propagate_version = true)]
@@ -41,10 +43,11 @@ struct Cli {
 
 #[derive(Subcommand)]
 enum Commands {
-    Compile(CompileCommand),
-
     Build(BuildCommand),
     Manifesto(ManifestoCommand),
+
+    Compile(CompileCommand),
+
     Completion(CompletionCommand),
     
     #[command(external_subcommand)]
@@ -56,7 +59,7 @@ fn main() {
 
     match &cli.command {
         Commands::Compile(cmd) => {
-            cmd.build();
+            cmd.compile();
         }
         Commands::Manifesto(cmd) => {
             cli.color.write_global();

@@ -1,5 +1,5 @@
 use clap::Args;
-use compiler::ast;
+// use compiler::ast;
 
 const ABOUT: &str = "Builds a packages and dependencies";
 
@@ -34,7 +34,14 @@ pub(crate) struct CompileCommand {
 }
 
 impl CompileCommand {
-    pub(crate) fn build(&self) {
-        ast::greet_user(&self.name);
+    pub(crate) fn new(name: &str) -> Self {
+        Self {
+            count: 0,
+            name: name.to_owned(),
+        }
+    }
+
+    pub(crate) fn compile(&self) {
+        // ast::dump();
     }
 }
