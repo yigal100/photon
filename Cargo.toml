@@ -1,4 +1,8 @@
 [workspace]
+# we can just list members here, or alternatively,
+# we set define the workspace root package below which would depend on these member crates 
+# members = [ "driver","parser"]
+# resolver = "3"
 
 [workspace.package]
 edition = "2024"
@@ -22,15 +26,20 @@ license.workspace = true
 homepage.workspace = true
 repository.workspace = true
 documentation.workspace = true
-readme.workspace = true
 
 [dependencies]
-compiler = {path = "compiler"}
-# compiler-hime ={ path = "compiler-hime" }
-# phaser = {path = "phaser"}
-clap = { version = "4.5", features = ["derive", "unicode", "wrap_help"] }
+clap = { version = "4.5", features = ["derive", "unicode",  "env", "cargo", "wrap_help"] }
 clap_complete = "4.5"
 wasm-bindgen = "0.2"
+compiler ={ path = "compiler" }
+parser = { path = "parser" }
 colorchoice-clap = "1.0.6"
 owo-colors = "4.0"
 anstream = "0.6"
+wasi.workspace = true
+wit-bindgen.workspace = true
+
+[workspace.dependencies]
+wasi = "0.14.2"
+wit-bindgen = { version = "0.50.0", default-features = false, features = ["realloc"] }
+wit-bindgen-rt = { version = "0.44.0", features = ["bitflags"] }
