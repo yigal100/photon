@@ -1,16 +1,8 @@
-pub mod ast {
-    pub struct Ast {
-        // AST fields
-    }
-
-    impl Ast 
-    {
-        pub fn new() -> Self {
-            Self {
-                // Initialize fields
-            }
-        }
-        
-    }
-
+pub mod semantic;
+pub mod backend {
+    pub mod eval;
+    pub mod wasm;
 }
+
+pub mod ast;
+

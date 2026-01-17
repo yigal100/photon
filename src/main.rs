@@ -2,6 +2,8 @@ mod commands {
     pub mod porcelain {
         pub mod compile;
     }
+    pub mod run;
+    // pub mod test;
     pub mod build;
     pub mod completion;
     pub mod manifesto;
@@ -17,6 +19,8 @@ use commands::build::BuildCommand;
 use commands::completion::CompletionCommand;
 use commands::manifesto::ManifestoCommand;
 use commands::porcelain::compile::CompileCommand;
+
+use crate::commands::run::RunCommand;
 
 const FE_STYLE: clap::builder::styling::Styles = Styles::styled()
     .header(AnsiColor::Yellow.on_default().bold())
@@ -43,6 +47,9 @@ struct Cli {
 
 #[derive(Subcommand)]
 enum Commands {
+    Run(RunCommand),
+    // Test(TestCommand),
+
     Build(BuildCommand),
     Manifesto(ManifestoCommand),
 
@@ -58,6 +65,9 @@ fn main() {
     let cli = Cli::parse();
 
     match &cli.command {
+        Commands::Run(cmd) => {
+            cmd.run();
+        }
         Commands::Compile(cmd) => {
             cmd.compile();
         }
