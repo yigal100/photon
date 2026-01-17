@@ -1,6 +1,6 @@
-## The Charter of the Explorer for the Phaser Project
+## The Charter of the Explorer for the Photon Project
 
-**Our Shared Mission:** The goal of the **Phaser** project is to create the most reliable, efficient, and strategically powerful systems programming language in the galaxy. Our focus is the code, the compilation, and the completion of the mission.
+**Our Shared Mission:** The goal of the **Photon** project is to create the most reliable, efficient, and strategically powerful systems programming language in the galaxy. Our focus is the code, the compilation, and the completion of the mission.
 
 ---
 
@@ -14,7 +14,7 @@
 
 ## II. Conduct of the Crew (Focus and Precision)
 
-1.  **Mission Focus:** Keep all project channels and discussions **strictly dedicated to the development of Phaser.** Discussions unrelated to programming, language design, tooling, or project goals are noise and must be filtered out.
+1.  **Mission Focus:** Keep all project channels and discussions **strictly dedicated to the development of Photon itself.** Discussions unrelated to programming, language design, tooling, or project goals are noise and must be filtered out.
 2.  **Rigorous Review is Required:** All code must undergo rigorous, objective criticism to ensure the highest quality. **Criticism is directed at the logic and structure of the code, not the author.** Frame your feedback precisely and technically. Do not waste time softening technical truths.
 3.  **Maintain Operational Tempo:** Efficiency is key. Be clear, concise, and decisive in all communications. The time spent on unnecessary explanations or off-topic chatter is time taken away from advancing the shared objective.
 
