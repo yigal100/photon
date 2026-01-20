@@ -1,6 +1,6 @@
-# Photon: The Multi-Phase Language
+# Photon Programming Language
 
-**Photon (`.photon`)** is a systems programming language forged in the spirit of exploration and strategic efficiency. Inspired by the performance of **Zig** and the compile-time safety of **Rust**, Photon is designed for low-level control, high-stakes performance, and unwavering security, featuring a unique **multi-phase compilation model**.
+**Photon (`.photon`)** is a programming language forged in the spirit of exploration and strategic efficiency. Inspired by the performance of **Zig** and the compile-time safety of **Rust**, Photon is designed for low-level control, high-stakes performance, and unwavering security, featuring a unique **multi-phase compilation model**.
 
 ## 📚 Documentation
 

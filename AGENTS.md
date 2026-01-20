@@ -4,7 +4,7 @@ This document provides guidance for AI assistants.
 ## Overview
 Photon is an experimental systems programming language implemented in Rust.
 It implements a traditional compilation pipeline combining Rust-like safety with Zig-style compile-time features.
-This workspace contains the source code for the all-in-one CLI tool named 'beam` for the Language.
+This workspace contains the source code for the all-in-one CLI tool named `beam` for the Language.
 Beam manages all aspects of the build process, including compilation, testing, and packaging.
 
 Notable components (crates) in this workspace:
