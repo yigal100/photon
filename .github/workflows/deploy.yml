@@ -38,6 +38,7 @@ jobs:
         run: |
           rm -rf content
           mv source-temp/docs content
+          mv source-temp/quartz.config.yml quartz.config.yml
           rm -rf source-temp
 
       - name: Setup Node
