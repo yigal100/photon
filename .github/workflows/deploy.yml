@@ -1,0 +1,68 @@
+name: Deploy Quartz site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      # 1. Checkout your custom Quartz fork (v5 branch) into the current directory
+      - name: Checkout Quartz Tooling
+        uses: actions/checkout@v4
+        with:
+          repository: yigal100/quartz
+          ref: v5
+          fetch-depth: 0
+
+      # 2. Checkout your actual vault/content into a temporary folder
+      - name: Checkout Content Source
+        uses: actions/checkout@v4
+        with:
+          path: source-temp
+
+      # 3. Move your markdown files from docs/ to Quartz's expected content/ folder
+      # We remove the default empty content folder from Quartz first if it exists
+      - name: Prepare Content
+        run: |
+          rm -rf content
+          mv source-temp/docs content
+          rm -rf source-temp
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Quartz
+        run: npx quartz build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
