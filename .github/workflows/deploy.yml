@@ -5,6 +5,9 @@ on:
     branches:
       - master
 
+env:
+  THEME_NAME: cyber-glow 
+
 permissions:
   contents: read
   pages: write
@@ -51,6 +54,9 @@ jobs:
 
       - name: Restore Quartz plugins
         run: npx quartz plugin restore
+
+      - name: Fetch Quartz Theme
+        run: curl -s -S https://raw.githubusercontent.com/saberzero1/quartz-themes/master/action.sh | bash -s -- $THEME_NAME
 
       - name: Build Quartz
         run: npx quartz build
